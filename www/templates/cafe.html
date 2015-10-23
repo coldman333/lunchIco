@@ -1,0 +1,83 @@
+<ion-view view-title="Заклади">       
+  <ion-content class="star" >
+
+<ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()"></ion-refresher>
+
+  <h1 ng-show="mess">{{mess}}</h1>
+
+<div class="box blue CafeItem"  ng-repeat="cafe in cafes"   > 
+         <h3>
+         <a href="#/app/cafe/{{cafe.c_id}}">  {{ cafe.name }}</a><br/>
+        
+          <button  ng-click="addToFavorit(this)" 
+             ng-class="isFavorit(this) ? 'ion-android-favorite' :'ion-android-favorite-outline'  "></button>
+         </h3>
+         <div class="cafeInfoBox">
+              <div class="cafeCountentBox"> 
+               
+                  <div class="hiddenAbout">{{ cafe.comment }}</div>
+              </div>
+           
+               <div class="lanchCountBox"> 
+                <h2> Обеды </h2>
+                 <span class="count"><b>{{ cafe.lunches_list.length}}</b>шт.</span>
+                 <span class="price">от <b>{{ cafe.lunches_list[0].price |  currency: "₴" }}</b></span>
+              </div>
+
+           </div> 
+         <div>
+           
+       <!--     <ui-gmap-google-map center='map.center' zoom='map.zoom' events="map.markersEvents">
+                    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" closeClick="hideMarkerPopup()" onClicked="showMarkerPopup()">
+           
+                    </ui-gmap-marker>        
+          </ui-gmap-google-map> -->
+
+         </div>
+
+       
+          <div  class="cafeAddress"  >
+            <a href="#/app/maps/{{cafe.c_id}}">
+            <span class="line"><b class="ion-ios-location marg20"></b> {{ cafe.locality}},{{ cafe.house}}</span>
+               <button class = " ion-map  "></button>
+
+               </a>
+          </div>
+
+       
+           
+         </div>
+ </div>
+
+<!-- 
+         <div class="itemContFull" ng-repeat="lunch in cafe.lunches_list" >
+ 
+                    <h3 class="itemName" ng-click="showfinfo(this)">{{lunch.name}}
+                       <span class="label label-info"> {{ lunch.price |  currency: "₴" }} </span><br/>
+                       <b style="font-size: 9px; color: #003580">  01/07/15  - 31/10/15</b>
+                    </h3>
+                    <div class="itemDishes" ns-show='showfinfo(this)'>
+                        <div class="itemImgCont">
+                         <img src="http://lunch.in.ua/templates/casomerimg/l24.jpg">
+                        </div>
+                        <div class="itemCont">    
+                          <dl>
+                            <dd ng-show="lunch.salad" ><span>{{ lunch.salad }}</span></dd>
+                            <dd ng-show="lunch.firstDish" ><span>{{ lunch.firstDish }}</span></dd>
+                            <dd ng-show="lunch.secondDish"><span>{{ lunch.secondDish }}</span></dd>
+                            <dd ng-show="lunch.drinks"><span>{{ lunch.drinks }}</span> </dd>
+                            <dt ng-show="lunch.comment">{{ lunch.comment }}</dt>                               
+                          </dl>
+                        </div>   
+                    </div>     -->
+  <!-- old list -->
+  <!--   <ul class="list list-cafe" >
+    	<li ng-repeat="cafe in cafes"  >
+    	  <a href="#/app/lunch/{{cafe.c_id}}"> {{cafe.name}}  {{cafe.isfavorite(this)}} </a>
+          <button  ng-click="addToFavorit(this)" 
+         ng-class="isFavorit(this) ? 'ion-android-favorite' :'ion-android-favorite-outline'  "></button>
+    	</li>
+    </ul> -->
+
+  </ion-content>
+</ion-view>

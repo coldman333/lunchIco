@@ -1,0 +1,33 @@
+<ion-view view-title="Про заклад">
+  <ion-content>
+
+
+ <div class="item"  ng-repeat="lunch in lunches" >
+
+
+      <h2>{{ lunch.c_name }}</h2>
+        <h3 class="itemName" ng-click="LC.showInfo(this)"> 
+           <span class="label label-info"> {{ lunch.price |  currency: "₴" }} </span>
+              {{ lunch.l_name }}<br>
+            <b style="font-size: 9px; color: #003580"> 01/07/15  - 31/10/15</b>
+        </h3>
+            <div class="itemImgCont">
+             <img src="http://lunch.in.ua/templates/casomerimg/l24.jpg">
+            </div>
+            <div class="itemCont">    
+             <dl>
+              <dt ng-show="lunch.salad" >Салат</dt>
+              <dd ng-show="lunch.salad" ><span>{{ lunch.salad }}</span></dd>
+              <dt ng-show="lunch.firstDish" >Первое</dt>
+              <dd ng-show="lunch.firstDish" ><span>{{ lunch.firstDish }}</span></dd>
+              <dt ng-show="lunch.secondDish">Второе</dt>
+              <dd ng-show="lunch.secondDish"><span>{{ lunch.secondDish }}</span></dd>
+              <dt ng-show="lunch.secondDish">Гарнир</dt>
+              <dd ng-show="lunch.secondDish"><span>Пюре \ Картопля по селянски</span> </dd>
+              <dt ng-show="lunch.comment">Примечание</dt>
+              <dd ng-show="lunch.comment"><span> </span></dd>                                 
+            </dl>
+          </div>
+  </div>
+  </ion-content>
+</ion-view>

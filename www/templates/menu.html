@@ -1,0 +1,58 @@
+<ion-side-menus enable-menu-with-back-views="false" expose-aside-when="large">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable bar-dark">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+     <div style=" text-align:center"> 
+
+     <a class="brand" href="/"><img src="http://lunch.in.ua//templates/relize_green/images/blogo_r.png" class="Rlogo"><img src="http://lunch.in.ua//templates/relize_green/images/blogo_l.png"></a>
+  </div>
+      <ion-list>
+        <ion-item menu-close href="#/app/favorites">
+         Вподобані
+        </ion-item>
+        <ion-item menu-close href="#/app/cafe">
+          Заклади
+        </ion-item>
+
+     <!--     <ion-item menu-close href="">
+         
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+         <ion-item menu-close href="#/app/favorites2">
+          My fack todo
+        </ion-item> -->
+       <!--  <ion-item menu-close href="#/app/lunch">
+          Lunches
+        </ion-item> -->
+
+        <!-- <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item> -->
+        
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

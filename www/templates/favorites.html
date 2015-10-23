@@ -1,0 +1,35 @@
+<ion-view view-title="Вподобані">
+  <ion-content class="star">
+     <div class="box blue CafeItem"  ng-repeat="cafe in cafes"  ng-show="isFavorit(this)"  > 
+         <h3>
+         <a href="#/app/cafe/{{cafe.c_id}}">  {{ cafe.name }}</a><br/>
+         <span> 
+            <span class="line"><b class="ion-clock"></b> {{ cafe.lunchTimeFrom }} - {{ cafe.lunchTimeTo }}</span>
+            <span class="line"><b class="ion-ios-location marg20"></b> {{ cafe.locality}},{{ cafe.house}}</span>
+          </span>
+          <button  ng-click="addToFavorit(this)" 
+             ng-class="isFavorit(this) ? 'ion-android-favorite' :'ion-android-favorite-outline'  "></button>
+         </h3>
+         <div class="itemContFull" ng-repeat="lunch in cafe.lunches_list" >
+                    <h3 class="itemName" ng-click="showfinfo(this)">{{lunch.name}}
+                       <span class="label label-info"> {{ lunch.price |  currency: "₴" }} </span><br/>
+                       <b style="font-size: 9px; color: #003580">  01/07/15  - 31/10/15</b>
+                    </h3>
+                    <div class="itemDishes" ns-show='showfinfo(this)'>
+                        <div class="itemImgCont">
+                         <img src="http://lunch.in.ua/templates/casomerimg/l24.jpg">
+                        </div>
+                        <div class="itemCont">    
+                         <dl>
+                          <dd ng-show="lunch.salad" ><span>{{ lunch.salad }}</span></dd>
+                          <dd ng-show="lunch.firstDish" ><span>{{ lunch.firstDish }}</span></dd>
+                          <dd ng-show="lunch.secondDish"><span>{{ lunch.secondDish }}</span></dd>
+                          <dd ng-show="lunch.drinks"><span>{{ lunch.drinks }}</span> </dd>
+                          <dt ng-show="lunch.comment">{{ lunch.comment  }}</dt>                               
+                        </dl>
+                      </div>
+                 </div>
+             </div>
+         </div>
+</ion-content>
+</ion-view>

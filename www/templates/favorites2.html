@@ -1,0 +1,39 @@
+<ion-view view-title="My Favorites">
+  <ion-content class="star">
+  <ion-slide-box on-slide-changed="slideHasChanged($index)" >
+      <ion-slide ng-repeat="cafe in FavoritCafes" >
+        <div class="box blue CafeItem" > 
+         <h3>
+         <a href="#/app/lunch/{{cafe.c_id}}">  {{ cafe.name   }}</a>
+          <button  ng-click="addToFavorit(this)" 
+             ng-class="isFavorit(this) ? 'ion-android-favorite' :'ion-android-favorite-outline'  "></button>
+
+         </h3>
+         <div class="itemContFull" ng-repeat="lunch in cafe.lunches_list" >
+                    <h3 class="itemName">{{lunch.name}}
+                       <span class="label label-info"> {{ lunch.price |  currency: "₴" }} </span><br/>
+                       <b style="font-size: 9px; color: #003580">  01/07/15  - 31/10/15</b>
+                    </h3>
+                    <div class="itemDishes">
+                        <div class="itemImgCont">
+                         <img src="http://lunch.in.ua/templates/casomerimg/l24.jpg">
+                        </div>
+                        <div class="itemCont">    
+                         <dl>
+                          <dd ng-show="lunch.salad" ><span>{{ lunch.salad }}</span></dd>
+                          <dd ng-show="lunch.firstDish" ><span>{{ lunch.firstDish }}</span></dd>
+                          <dd ng-show="lunch.secondDish"><span>{{ lunch.secondDish }}</span></dd>
+                          <dd ng-show="lunch.secondDish"><span>Пюре \ Картопля по селянски</span> </dd>
+                          <dt ng-show="lunch.comment">{{ lunch.comment}}</dt>                             
+                        </dl>
+                      </div>
+                 </div>
+             </div>
+         </div>
+      </ion-slide>
+    </ion-slide-box>
+
+
+
+</ion-content>
+</ion-view>
